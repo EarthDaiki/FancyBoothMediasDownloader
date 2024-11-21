@@ -5,12 +5,16 @@ from unlock import UnlockAlbums
 
 
 class Example:
+    """
+    This class is an example of downloading private albums, which means password-protected albums.
+    """
     def __init__(self, ua: UnlockAlbums, api: Api, ig: ImagesGetter) -> None:
         self.ua = ua
         self.api = api
         self.ig = ig
 
     def run(self):
+        # You need to put the parent folder's url in this url variable.
         url = 'url'
         # has_access = self.ua.unlock_with_cookies(url, r"your cookies file path. (Netscape's text or json)")
         has_access = self.ua.unlock_without_cookies(url, 'password')
@@ -24,6 +28,7 @@ class Example:
             albums_ids = self.api.get_albums_ids(uris_list)
             print(f'Albums IDs: {albums_ids}')
 
+            # Change to your preferred root directory.
             root_dir = r'D:\fancybooths'
 
             # if only is None, it means download all medias.
