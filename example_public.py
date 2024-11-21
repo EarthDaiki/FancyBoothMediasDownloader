@@ -25,7 +25,7 @@ class Example:
         albums_ids = self.api.get_albums_ids(uris_list)
         print(f'Albums IDs: {albums_ids}')
 
-        # Chane this to your root dir.
+        # Change to your preferred root directory.
         root_dir = r'D:\fancybooths'
         only = [2]
         self.ig.download_medias(albums_ids, albums_keys, root_dir, only)
